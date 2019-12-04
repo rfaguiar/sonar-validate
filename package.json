@@ -2,7 +2,7 @@
   "name": "sonar-validate",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "validate.js",
   "scripts": {
     "test": "jest"
   },
