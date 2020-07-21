@@ -9,15 +9,11 @@ Plugin for use in docker build step to validade sonar analises after analise cod
 - SONAR_LOGIN  
 
 ##### Example for use:
-```Dockerfile
-FROM rfaguiar/sonar-validate:1.0.0 as validate
-
-ARG SONAR_URL
-ARG SONAR_PROJECT_KEY
-ARG SONAR_LOGIN
-ENV SONAR_URL $SONAR_URL
-ENV SONAR_PROJECT_KEY $SONAR_PROJECT_KEY
-ENV SONAR_LOGIN $SONAR_LOGIN
-
-RUN npm test
+```Shell
+docker run \
+    --rm --name sonar-validate  \
+    -e SONAR_URL=${SONAR_URL} \
+    -e SONAR_PROJECT_KEY=${SONAR_PROJECT_KEY} \
+    -e SONAR_LOGIN=${SONAR_LOGIN} \
+    rfaguiar/sonar-validate:2.0.1
 ```
